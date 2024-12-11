@@ -1,0 +1,22 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore the virtual environment directory
+.venv/
+
+# Ignore IDE-specific files and folders
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore environment variables file
+.env
+
+# Ignore the instance folder, which contains sensitive runtime data like the database
+instance/
+
+# Ignore static files generated during build
+static/
