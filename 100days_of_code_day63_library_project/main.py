@@ -62,7 +62,7 @@ def edit():
     if request.method == 'POST':
         book_id = request.form['book_id']
         book_to_update = db.get_or_404(Book, book_id)
-        rating = request.form['rating']
+        rating = float(request.form['rating'])
         book_to_update.rating = rating
         db.session.commit()
         return redirect(url_for('home'))
