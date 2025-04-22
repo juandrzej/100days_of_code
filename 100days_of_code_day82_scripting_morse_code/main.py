@@ -1,3 +1,7 @@
+morse_code: dict[str, str] = {
+    "a": ". ___",
+}
+
 def converter(base_list: list[str]) -> str:
     for char in base_list:
         pass
