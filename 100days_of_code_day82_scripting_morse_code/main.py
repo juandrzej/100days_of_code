@@ -1,5 +1,8 @@
 morse_code: dict[str, str] = {
     "a": ". ___",
+    "b": "___ . . .",
+    "c": "___ . ___ .",
+    "d": "___ . .",
 }
 
 def converter(base_list: list[str]) -> str:
