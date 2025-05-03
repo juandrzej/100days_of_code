@@ -40,18 +40,19 @@ morse_code: dict[str, str] = {
     "0": "___ ___ ___ ___ ___",
 }
 
+invalid_characters: set[str] = set()
+
 
 def word_converter(word: str) -> str:
     """Function to convert a word to Morse Code."""
-    converted_charachters: list = []
+    converted_characters: list = []
     for char in word:
         try:
-            converted_charachters.append(morse_code[char])
-        except Exception as e:
-            print(e)
-
+            converted_characters.append(morse_code[char])
+        except KeyError:
+            invalid_characters.add(char)
     # 4. The space between letters is three units.
-    return "   ".join(converted_charachters)
+    return "   ".join(converted_characters)
 
 
 def morse_converter(input: str) -> str:
@@ -60,7 +61,6 @@ def morse_converter(input: str) -> str:
     converted_words: list[str] = []
     for word in words:
         converted_words.append(word_converter(word))
-
     # 5. The space betwen words is seven units.
     return "       ".join(converted_words)
 
@@ -68,7 +68,13 @@ def morse_converter(input: str) -> str:
 def main():
     user_input = input("Please give me a string to convert into Morse Code: ")
     converted_input: str = morse_converter(user_input)
-    print(converted_input)
+    print(
+        f"Please see the below string after convertion to Morse Code: \n{converted_input}"
+    )
+    if invalid_characters:
+        print(
+            f"The provided invalid characters have been skipped: {', '.join(invalid_characters)}."
+        )
 
 
 if __name__ == "__main__":
