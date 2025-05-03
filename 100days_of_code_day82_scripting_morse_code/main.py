@@ -48,7 +48,7 @@ def word_converter(word: str) -> str:
     converted_characters: list = []
     for char in word:
         try:
-            converted_characters.append(morse_code[char])
+            converted_characters.append(morse_code[char.lower()])
         except KeyError:
             invalid_characters.add(char)
     # 4. The space between letters is three units.
