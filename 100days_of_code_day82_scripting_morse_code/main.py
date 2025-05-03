@@ -1,3 +1,6 @@
+# 1. The lenght of a dot in one unit.
+# 2. A dash is three units.
+# 3. The space between parts of the same letter is one unit.
 morse_code: dict[str, str] = {
     "a": ". ___",
     "b": "___ . . .",
@@ -38,20 +41,33 @@ morse_code: dict[str, str] = {
 }
 
 
-def converter(base_list: list[str]) -> str:
-    converted_list: list = []
-    for char in base_list:
-        if char in morse_code:
-            converted_list.append(morse_code[char])
+def word_converter(word: str) -> str:
+    """Function to convert a word to Morse Code."""
+    converted_charachters: list = []
+    for char in word:
+        try:
+            converted_charachters.append(morse_code[char])
+        except Exception as e:
+            print(e)
 
-    return "".join(converted_list)
+    # 4. The space between letters is three units.
+    return "   ".join(converted_charachters)
+
+
+def morse_converter(input: str) -> str:
+    """Function to take input string and convert it to Morse Code string."""
+    words: list[str] = input.split()
+    converted_words: list[str] = []
+    for word in words:
+        converted_words.append(word_converter(word))
+
+    # 5. The space betwen words is seven units.
+    return "       ".join(converted_words)
 
 
 def main():
     user_input = input("Please give me a string to convert into Morse Code: ")
-    user_input_list = list(user_input)
-    print(user_input_list)
-    converted_input: str = converter(user_input_list)
+    converted_input: str = morse_converter(user_input)
     print(converted_input)
 
 
