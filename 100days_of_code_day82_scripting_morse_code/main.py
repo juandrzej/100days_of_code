@@ -25,15 +25,27 @@ morse_code: dict[str, str] = {
     "x": "___ . . ___",
     "y": "___ . ___ ___",
     "z": "___ ___ . .",
+    "1": ". ___ ___ ___ ___",
+    "2": ". . ___ ___ ___",
+    "3": ". . . ___ ___",
+    "4": ". . . . ___",
+    "5": ". . . . .",
+    "6": "___ . . . .",
+    "7": "___ ___ . . .",
+    "8": "___ ___ ___ . .",
+    "9": "___ ___ ___ ___ .",
+    "0": "___ ___ ___ ___ ___",
 }
+
 
 def converter(base_list: list[str]) -> str:
     converted_list: list = []
     for char in base_list:
         if char in morse_code:
             converted_list.append(morse_code[char])
-    
+
     return "".join(converted_list)
+
 
 def main():
     user_input = input("Please give me a string to convert into Morse Code: ")
@@ -41,6 +53,7 @@ def main():
     print(user_input_list)
     converted_input: str = converter(user_input_list)
     print(converted_input)
+
 
 if __name__ == "__main__":
     main()
