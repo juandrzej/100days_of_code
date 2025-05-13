@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Andrzej Zięba{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center py-5 bg-tokyo-darker">
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Andrzej Zięba" class="rounded-circle mb-4 profile-img" width="200">
+        <h1 class="display-4 text-tokyo-light">Hello, I'm <span class="text-tokyo-blue">Andrzej Zięba</span></h1>
+        <p class="lead text-tokyo-light">DevOps Engineer | Cloud Specialist | Automation Enthusiast</p>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="https://github.com/juandrzej" target="_blank" class="btn btn-tokyo-dark">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/andrzejzieba/" target="_blank" class="btn btn-tokyo-purple">
+                <i class="fab fa-linkedin me-2"></i>LinkedIn
+            </a>
+            <a href="{{ url_for('projects') }}" class="btn btn-tokyo-blue">
+                <i class="fas fa-code me-2"></i>My Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-tokyo-light">My <span class="text-tokyo-blue">DevOps</span> Skills</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body text-center">
+                        <i class="fab fa-docker fa-3x mb-3 text-tokyo-blue"></i>
+                        <h3 class="card-title text-tokyo-light">Containerization</h3>
+                        <p class="card-text text-tokyo-light">Docker, Kubernetes, Podman</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body text-center">
+                        <i class="fas fa-cloud fa-3x mb-3 text-tokyo-blue"></i>
+                        <h3 class="card-title text-tokyo-light">Cloud Platforms</h3>
+                        <p class="card-text text-tokyo-light">AWS, GCP, Terraform, Ansible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body text-center">
+                        <i class="fas fa-code-branch fa-3x mb-3 text-tokyo-blue"></i>
+                        <h3 class="card-title text-tokyo-light">CI/CD</h3>
+                        <p class="card-text text-tokyo-light">GitHub Actions, Jenkins, ArgoCD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Andrzej Zięba{% endblock %}
+
+{% block content %}
+<section class="projects-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-tokyo-light">My <span class="text-tokyo-blue">Projects</span></h2>
+        <div class="row">
+            <!-- Kubernetes Cluster -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body">
+                        <h3 class="card-title text-tokyo-light">K8s Homelab</h3>
+                        <p class="card-text text-tokyo-light">Personal Kubernetes cluster with monitoring stack (Prometheus, Grafana, Loki) and GitOps workflow.</p>
+                        <div class="badges mb-3">
+                            <span class="badge bg-tokyo-blue">Kubernetes</span>
+                            <span class="badge bg-tokyo-purple">Helm</span>
+                            <span class="badge bg-tokyo-red">ArgoCD</span>
+                        </div>
+                        <a href="#" class="btn btn-tokyo-blue">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Terraform Modules -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body">
+                        <h3 class="card-title text-tokyo-light">Terraform AWS Modules</h3>
+                        <p class="card-text text-tokyo-light">Reusable Terraform modules for deploying common AWS infrastructure patterns.</p>
+                        <div class="badges mb-3">
+                            <span class="badge bg-tokyo-blue">Terraform</span>
+                            <span class="badge bg-tokyo-purple">AWS</span>
+                            <span class="badge bg-tokyo-red">CI/CD</span>
+                        </div>
+                        <a href="#" class="btn btn-tokyo-blue">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CI/CD Pipeline -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body">
+                        <h3 class="card-title text-tokyo-light">GitHub Actions Pipeline</h3>
+                        <p class="card-text text-tokyo-light">Automated build, test, and deploy pipeline for containerized applications.</p>
+                        <div class="badges mb-3">
+                            <span class="badge bg-tokyo-blue">GitHub Actions</span>
+                            <span class="badge bg-tokyo-purple">Docker</span>
+                            <span class="badge bg-tokyo-red">K8s</span>
+                        </div>
+                        <a href="#" class="btn btn-tokyo-blue">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monitoring Stack -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body">
+                        <h3 class="card-title text-tokyo-light">Observability Stack</h3>
+                        <p class="card-text text-tokyo-light">Centralized logging and monitoring with Prometheus, Grafana, and Loki.</p>
+                        <div class="badges mb-3">
+                            <span class="badge bg-tokyo-blue">Prometheus</span>
+                            <span class="badge bg-tokyo-purple">Grafana</span>
+                            <span class="badge bg-tokyo-red">Loki</span>
+                        </div>
+                        <a href="#" class="btn btn-tokyo-blue">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- This Portfolio -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 bg-tokyo-dark border-tokyo-darker">
+                    <div class="card-body">
+                        <h3 class="card-title text-tokyo-light">This Portfolio</h3>
+                        <p class="card-text text-tokyo-light">Containerized Flask app deployed with CI/CD to Kubernetes.</p>
+                        <div class="badges mb-3">
+                            <span class="badge bg-tokyo-blue">Flask</span>
+                            <span class="badge bg-tokyo-purple">Docker</span>
+                            <span class="badge bg-tokyo-red">K8s</span>
+                        </div>
+                        <a href="#" class="btn btn-tokyo-blue">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

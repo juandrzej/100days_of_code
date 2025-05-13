@@ -1,0 +1,194 @@
+/* Tokyo Night Moon Theme Colors */
+:root {
+    --tokyo-dark: #1a1b26;
+    --tokyo-darker: #16161e;
+    --tokyo-darkest: #0f0f14;
+    --tokyo-light: #a9b1d6;
+    --tokyo-lighter: #c0caf5;
+    --tokyo-lightest: #d5d6db;
+    --tokyo-blue: #7aa2f7;
+    --tokyo-purple: #bb9af7;
+    --tokyo-red: #f7768e;
+    --tokyo-orange: #ff9e64;
+    --tokyo-yellow: #e0af68;
+    --tokyo-green: #9ece6a;
+    --tokyo-teal: #73daca;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--tokyo-dark);
+    color: var(--tokyo-light);
+}
+
+code, pre {
+    font-family: 'Fira Code', monospace;
+}
+
+/* Text Colors */
+.text-tokyo-light {
+    color: var(--tokyo-light);
+}
+
+.text-tokyo-lighter {
+    color: var(--tokyo-lighter);
+}
+
+.text-tokyo-blue {
+    color: var(--tokyo-blue);
+}
+
+.text-tokyo-purple {
+    color: var(--tokyo-purple);
+}
+
+.text-tokyo-red {
+    color: var(--tokyo-red);
+}
+
+/* Background Colors */
+.bg-tokyo-dark {
+    background-color: var(--tokyo-dark);
+}
+
+.bg-tokyo-darker {
+    background-color: var(--tokyo-darker);
+}
+
+.bg-tokyo-darkest {
+    background-color: var(--tokyo-darkest);
+}
+
+/* Custom Cards */
+.tokyo-card {
+    background-color: var(--tokyo-darker);
+    border: 1px solid var(--tokyo-darkest);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn-tokyo-blue {
+    background-color: var(--tokyo-blue);
+    color: var(--tokyo-darkest);
+    border: none;
+}
+
+.btn-tokyo-blue:hover {
+    background-color: #6a91e6;
+    color: var(--tokyo-darkest);
+}
+
+.btn-tokyo-purple {
+    background-color: var(--tokyo-purple);
+    color: var(--tokyo-darkest);
+    border: none;
+}
+
+.btn-tokyo-purple:hover {
+    background-color: #aa89e6;
+    color: var(--tokyo-darkest);
+}
+
+.btn-tokyo-dark {
+    background-color: var(--tokyo-darker);
+    color: var(--tokyo-light);
+    border: 1px solid var(--tokyo-blue);
+}
+
+.btn-tokyo-dark:hover {
+    background-color: var(--tokyo-darkest);
+    color: var(--tokyo-lighter);
+}
+
+/* Borders */
+.border-tokyo-darker {
+    border-color: var(--tokyo-darker) !important;
+}
+
+/* Profile Image */
+.profile-img {
+    border: 4px solid var(--tokyo-blue) !important;
+    box-shadow: 0 0 20px rgba(122, 162, 247, 0.3);
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--tokyo-blue) !important;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Section Headings */
+section h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--tokyo-blue);
+}
+
+/* Card Hover Effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--tokyo-darkest);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    background-color: var(--tokyo-darker);
+    border-color: var(--tokyo-darkest);
+    color: var(--tokyo-light);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--tokyo-darker);
+    border-color: var(--tokyo-blue);
+    color: var(--tokyo-light);
+    box-shadow: 0 0 0 0.25rem rgba(122, 162, 247, 0.25);
+}
+
+/* Social Links */
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--tokyo-blue) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    section h2:after {
+        width: 60px;
+    }
+}
