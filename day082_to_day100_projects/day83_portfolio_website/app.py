@@ -1,8 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
+import os
+from dotenv import load_dotenv
+import smtplib
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
+
+# Load environment variables
+load_dotenv()
+email: str = os.environ.get("email")
+password: str = os.environ.get("password")
 
 
 @app.route("/")
@@ -23,7 +31,18 @@ def projects():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        # Here you would typically process the form data
+        data = request.form
+
+        # Send contact data via email
+        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+            connection.starttls()
+            connection.login(user=email, password=password)
+            connection.sendmail(
+                from_addr=email,
+                to_addrs=email,
+                msg=f"Subject:New Contact Form Submission"
+                "\n\nName: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}",
+            )
         return redirect(url_for("home"))
     return render_template("contact.html")
 
