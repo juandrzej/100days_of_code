@@ -13,7 +13,7 @@
                 <div class="contact-info mt-5">
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-envelope fa-lg me-3 text-tokyo-blue"></i>
-                        <p class="mb-0 text-tokyo-light">programming.yippee729@passinbox.com</p>
+                        <p class="mb-0 text-tokyo-light">ziebandrzej@gmail.com</p>
                     </div>
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-map-marker-alt fa-lg me-3 text-tokyo-blue"></i>
@@ -31,25 +31,25 @@
             </div>
             
             <div class="col-lg-6 mt-5 mt-lg-0">
-                <form action="{{ url_for('contact') }}" method="POST" class="tokyo-card p-4 rounded">
-                    <div class="mb-3">
-                        <label for="name" class="form-label text-tokyo-light">Name</label>
-                        <input type="text" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label text-tokyo-light">Email</label>
-                        <input type="email" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="subject" class="form-label text-tokyo-light">Subject</label>
-                        <input type="text" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="subject" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label text-tokyo-light">Message</label>
-                        <textarea class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-tokyo-blue w-100">Send Message</button>
-                </form>
+		<form action="{{ url_for('contact') }}" method="POST" class="tokyo-card p-4 rounded">
+		    <div class="mb-3">
+			<label for="name" class="form-label text-tokyo-light">Name</label>
+			<input type="text" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="name" name="name" required>
+		    </div>
+		    <div class="mb-3">
+			<label for="email" class="form-label text-tokyo-light">Email</label>
+			<input type="email" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="email" name="email" required>
+		    </div>
+		    <div class="mb-3">
+			<label for="subject" class="form-label text-tokyo-light">Subject</label>
+			<input type="text" class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="subject" name="subject" required>
+		    </div>
+		    <div class="mb-3">
+			<label for="message" class="form-label text-tokyo-light">Message</label>
+			<textarea class="form-control bg-tokyo-dark text-tokyo-light border-tokyo-darker" id="message" name="message" rows="5" required></textarea>
+		    </div>
+		    <button type="submit" class="btn btn-tokyo-blue w-100">Send Message</button>
+		</form>
             </div>
         </div>
     </div>

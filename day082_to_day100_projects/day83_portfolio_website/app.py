@@ -40,7 +40,7 @@ def contact():
             connection.sendmail(
                 from_addr=email,
                 to_addrs=email,
-                msg="Subject:New Contact Form Submission\n\n"
+                msg=f"Subject:{data['subject']}\n\n"
                 f"Name: {data['name']}\n"
                 f"Email: {data['email']}\n"
                 f"Message: {data['message']}",
