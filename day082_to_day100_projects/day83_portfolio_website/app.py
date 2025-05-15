@@ -9,8 +9,8 @@ bootstrap = Bootstrap5(app)
 
 # Load environment variables
 load_dotenv()
-email: str = os.environ.get("email")
-password: str = os.environ.get("password")
+email: str = os.environ.get("email", "")
+password: str = os.environ.get("password", "")
 
 
 @app.route("/")
@@ -40,8 +40,10 @@ def contact():
             connection.sendmail(
                 from_addr=email,
                 to_addrs=email,
-                msg=f"Subject:New Contact Form Submission"
-                "\n\nName: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}",
+                msg="Subject:New Contact Form Submission\n\n"
+                f"Name: {data['name']}\n"
+                f"Email: {data['email']}\n"
+                f"Message: {data['message']}",
             )
         return redirect(url_for("home"))
     return render_template("contact.html")
