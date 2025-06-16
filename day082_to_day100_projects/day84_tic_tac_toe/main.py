@@ -35,11 +35,11 @@ def check_winner(board: list[str]) -> str | None:
     return None
 
 
-def player_move(board: list[str]) -> int | None:
+def player_move(board: list[str]) -> int:
     """Get and validate player's move"""
     while True:
         try:
-            move = int(input("Enter your move (1-9): ")) - 1
+            move: int = int(input("Enter your move (1-9): ")) - 1
             if 0 <= move <= 8 and board[move] == " ":
                 return move
             else:
@@ -48,7 +48,7 @@ def player_move(board: list[str]) -> int | None:
             print("Please enter a number between 1 and 9.")
 
 
-def computer_move(board: list[str], computer_char):
+def computer_move(board: list[str], computer_char: str) -> int:
     """Simple AI for computer's move"""
     player_char = "O" if computer_char == "X" else "X"
 
@@ -87,37 +87,38 @@ def computer_move(board: list[str], computer_char):
             return i
 
 
-def play_game():
+def play_game() -> None:
     """Main game loop"""
     board: list[str] = [" "] * 9
     print("Welcome to Tic Tac Toe!")
     print("Positions are numbered 1-9 from top-left to bottom-right")
-    print_board(["1", "2", "3", "4", "5", "6", "7", "8", "9"])
+    print_board([str(x) for x in range(1, 10)])
 
     # Choose player's character
-    player_char = input("Choose X or O: ").upper()
+    player_char: str = input("Choose X or O: ").upper()
     while player_char not in ["X", "O"]:
-        player_char = input("Please choose X or O: ").upper()
+        player_char: str = input("Please choose X or O: ").upper()
 
-    computer_char = "O" if player_char == "X" else "X"
+    computer_char: str = "O" if player_char == "X" else "X"
 
     # Determine who goes first
-    turn = "player" if random.choice([True, False]) else "computer"
+    turn: str = "player" if random.choice([True, False]) else "computer"
     print(f"{turn.capitalize()} goes first!")
 
     while True:
         if turn == "player":
             print_board(board)
-            move = player_move(board)
+            move: int = player_move(board)
             board[move] = player_char
             turn = "computer"
         else:
             print("Computer's turn...")
-            move = computer_move(board, computer_char)
+            move: int = computer_move(board, computer_char)
             board[move] = computer_char
             turn = "player"
 
-        result = check_winner(board)
+        # into match case + result into int?
+        result: str | None = check_winner(board)
         if result:
             print_board(board)
             if result == "Tie":
